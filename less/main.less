@@ -53,8 +53,9 @@ a {
 
 .intro {
 	position: relative;
-	width: 500px;
-	height: 300px;
+	height: 327px;
+	width: 100%;
+	overflow: hidden;
 
 	&:before {
 		content: "";
@@ -74,19 +75,20 @@ a {
 		left: -228px;
 		width: 737px;
 		height: 737px;
-		background-image: url( "img/intro_border.png" );
+		background-image: url( "../img/intro_border.png" );
 		background-repeat: no-repeat;
 		background-size: contain;
 	}
 
 	.text {
 		position: relative;
-		left: 51px;
-		top: 43px;
+		margin-top: 43px;
+		margin-left: 51px;
+		margin-right: 20px;
 		font-size: 38px;
 		font-weight: 100;
 		color: @background_pop_text;
-		width: 376px;
+		max-width: 376px;
 
 		.big {
 			font-size: 45px;
@@ -100,7 +102,7 @@ a {
 
 .right {
 	max-width: 470px;
-	margin-top: 57px;
+	margin-top: 40px;
 
 	.text {
 
@@ -164,7 +166,7 @@ a {
 		left: 0px;
 		width: 100%;
 		height: 10px;
-		background-image: url( "img/footer_border.png" );
+		background-image: url( "../img/footer_border.png" );
 		background-repeat: repeat-x;
 	}
 
@@ -214,5 +216,20 @@ a {
 			grid-row: 3;
 		}
 
+	}
+}
+
+@media ( max-width: 329px ) {
+	
+	.intro {
+		height: 347px;
+
+		&:before {
+			top: -415px;
+		}
+
+		&:after {
+			top: -406px;
+		}
 	}
 }
