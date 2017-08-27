@@ -12,6 +12,36 @@ html, body {
 	font-family: "Source Sans Pro", serif;
 }
 
+.circle_background {
+	position: absolute;
+	overflow: hidden;
+	height: 600px;
+	width: 100%;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: -465px;
+		left: -200px;
+		width: 760px;
+		height: 760px;
+		background: @background_pop;
+		border-radius: 5000px;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: -456px;
+		left: -188px;
+		width: 737px;
+		height: 737px;
+		background-image: url( "../img/intro_border.png" );
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+}
+
 ul {
 	list-style: none;
 }
@@ -55,30 +85,6 @@ a {
 	position: relative;
 	height: 327px;
 	width: 100%;
-	overflow: hidden;
-
-	&:before {
-		content: "";
-		position: absolute;
-		top: -465px;
-		left: -200px;
-		width: 760px;
-		height: 760px;
-		background: @background_pop;
-		border-radius: 5000px;
-	}
-
-	&:after {
-		content: "";
-		position: absolute;
-		top: -456px;
-		left: -188px;
-		width: 737px;
-		height: 737px;
-		background-image: url( "../img/intro_border.png" );
-		background-repeat: no-repeat;
-		background-size: contain;
-	}
 
 	.text {
 		position: relative;
@@ -103,6 +109,7 @@ a {
 .right {
 	max-width: 470px;
 	margin-top: 40px;
+	padding-right: 28px;
 
 	.text {
 
@@ -141,13 +148,12 @@ a {
 }
 
 .left {
-	margin-top: 384px;
 	margin-left: 35px;
 	margin-right: 40px;
 	max-width: 470px;
 
-	.text {
-
+	.text:first-child {
+		margin-top: 384px;
 	}
 
 }
@@ -212,16 +218,19 @@ a {
 		}
 
 		.grid_three {
-			margin-top: 40px;
 			grid-row: 3;
+
+			.text {
+				margin-top: 40px;
+			}
 		}
 
 	}
 }
 
-@media ( max-width: 420px ) {
+@media ( max-width: 440px ) {
 
-	.intro {
+	.circle_background {
 
 		&:before {
 			top: -435px;
@@ -237,7 +246,7 @@ a {
 
 @media ( max-width: 329px ) {
 	
-	.intro {
+	.circle_background {
 		height: 352px;
 
 		&:before {
@@ -246,6 +255,34 @@ a {
 
 		&:after {
 			top: -401px;
+		}
+	}
+
+	.right {
+
+		.text {
+			font-size: 25px;
+		}
+
+		ul {
+
+			li {
+
+				.title {
+					font-size: 22px;
+				}
+
+				.description {
+					font-size: 17px;
+				}
+			}
+		}
+	}
+
+	.left {
+
+		.text {
+			font-size: 21px;
 		}
 	}
 }
