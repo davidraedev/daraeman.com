@@ -60,8 +60,8 @@ a {
 	&:before {
 		content: "";
 		position: absolute;
-		top: -435px;
-		left: -240px;
+		top: -465px;
+		left: -200px;
 		width: 760px;
 		height: 760px;
 		background: @background_pop;
@@ -71,8 +71,8 @@ a {
 	&:after {
 		content: "";
 		position: absolute;
-		top: -426px;
-		left: -228px;
+		top: -456px;
+		left: -188px;
 		width: 737px;
 		height: 737px;
 		background-image: url( "../img/intro_border.png" );
@@ -219,17 +219,33 @@ a {
 	}
 }
 
-@media ( max-width: 329px ) {
-	
+@media ( max-width: 420px ) {
+
 	.intro {
-		height: 347px;
 
 		&:before {
-			top: -415px;
+			top: -435px;
+			left: -240px;
 		}
 
 		&:after {
-			top: -406px;
+			top: -426px;
+			left: -228px;
+		}
+	}
+}
+
+@media ( max-width: 329px ) {
+	
+	.intro {
+		height: 352px;
+
+		&:before {
+			top: -410px;
+		}
+
+		&:after {
+			top: -401px;
 		}
 	}
 }
