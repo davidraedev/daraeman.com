@@ -2,3 +2,5 @@
 css/*
 !.gitkeep
 node_modules
+img/min/*
+img/src/*

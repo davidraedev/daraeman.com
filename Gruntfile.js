@@ -1,7 +1,19 @@
+const mozjpeg = require( "imagemin-mozjpeg" );
+
 module.exports = function( grunt ) {
 	require( "jit-grunt" )( grunt );
 
 	grunt.initConfig({
+		imagemin: {
+			dynamic: {
+				files: [{
+					expand: true,
+					cwd: "img/full",
+					src: [ "*.{png,jpg,gif}" ],
+					dest: "img/min/",
+				}]
+			}
+		},
 		less: {
 			development: {
 				options: {
@@ -19,11 +31,12 @@ module.exports = function( grunt ) {
 				files: [ "less/*.less" ],
 				tasks: [ "less" ],
 				options: {
-					nospawn: true
+					spawn: false
 				}
 			}
 		}
 	});
 
-	grunt.registerTask( "default", [ "less" ] );
+	grunt.registerTask( "default", [ "less", "imagemin" ] );
+	grunt.registerTask( "minify_images", [ "imagemin" ] );
 };
