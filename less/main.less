@@ -17,6 +17,7 @@ html, body {
 	overflow: hidden;
 	height: 600px;
 	width: 100%;
+	z-index: 0;
 
 	&:before {
 		content: "";
@@ -52,6 +53,8 @@ a {
 }
 
 .grid_container {
+	position: relative;
+	z-index: 1;
 	display: grid;
 	grid-auto-rows: 50%;
 
